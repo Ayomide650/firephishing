@@ -93,10 +93,17 @@ Choose how you want to host the page:
 
 ---
 
-## 🌍 Connect with Me
+## 🌐 Connect With Me
 
-- 🔹 [Telegram](https://t.me/unikruzng)
-- 🔸 [GitHub](https://github.com/Ayomide650)
+<p align="center">
+  <a href="https://t.me/unikruzng" target="_blank">
+    <img src="https://img.shields.io/badge/Telegram-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
+  </a>
+  <a href="https://github.com/Ayomide650" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-171515?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+</p>
+
 
 ---
 
