@@ -25,16 +25,31 @@
 
 ---
 
-## 📦 Installation
+## 📦 Installation Guide
 
-### 📌 Prerequisites (Termux/Linux)
+---
+
+### 📌 Prerequisites (Termux / Linux)
+
+Install required packages:
 
 ```bash
 pkg install php curl unzip git
 pkg install wget ncurses-utils proot
 ```
 
-### 🔌 Ngrok Setup (Termux/Linux ARM)
+🧩 Components:
+- `php` – Launch phishing pages  
+- `curl`, `wget` – Download and handle URLs  
+- `unzip` – Extract zipped files  
+- `git` – Clone repositories  
+- `proot` – Runtime layer for Termux
+
+---
+
+### 🔌 Ngrok Setup (Termux / ARM Linux)
+
+Enable storage and set up Ngrok:
 
 ```bash
 termux-setup-storage
@@ -44,9 +59,13 @@ chmod +x ngrok
 ./ngrok authtoken <YOUR_TOKEN>
 ```
 
+🔐 Replace `<YOUR_TOKEN>` with your [Ngrok Auth Token](https://dashboard.ngrok.com/get-started/your-authtoken)
+
 ---
 
-## 🚀 Setup and Run
+### 🚀 FireCrack Setup & Launch
+
+Clone, give permission, and run the tool:
 
 ```bash
 git clone https://github.com/Ayomide650/firephishing.git
@@ -57,9 +76,11 @@ chmod +x firephishing.sh
 
 ---
 
-## 🕹️ Usage
+## 🕹️ Usage Guide
 
 ### 🧠 Target Selection
+
+Choose your phishing target from the menu:
 
 ```
 [::] Select An Attack For Your Victim [::]
@@ -72,36 +93,38 @@ chmod +x firephishing.sh
 
 ---
 
-### 🌐 Port Forwarding
+### 🌐 Port Forwarding Options
+
+Choose how to host your phishing page:
 
 ```
-[01] Localhost  
-[02] Ngrok
+[01] Localhost — Test locally
+[02] Ngrok     — Get a public link
 ```
 
 ---
 
-### 🛡️ Capture Data
+### 🛡️ Capturing Data
+
+View collected data:
 
 ```bash
-./firephishing.sh -i   # View IPs  
+./firephishing.sh -i   # View IPs
 ./firephishing.sh -c   # View Credentials
 ```
 
 ---
 
-### 🔧 Customization
+### 🔧 Customization Options
 
-- **Custom Port**: Set your own server port  
-- **Masked URL**: Make phishing links look like real domains (e.g. `https://get-free-followers.com`)  
+- 🎯 **Custom Port**: Run server on your chosen port  
+- 🕵️‍♂️ **Masked URL**: Use links like `https://get-free-followers.com` to disguise the real URL
 
 ---
 
 ## 🖥️ Screenshots
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=2000&pause=700&color=FF9F43&center=true&vCenter=true&width=600&lines=🎬+Real-time+Cred+Sniffing;🧠+Social+Engineering+Mastery" />
-</p>
+> *(Insert screenshots here if needed — UI, credentials capture, etc.)*
 
 ---
 
@@ -110,45 +133,36 @@ chmod +x firephishing.sh
 | Tool   | Purpose                     |
 |--------|-----------------------------|
 | Bash   | Core scripting               |
-| PHP    | Phishing page handler        |
-| Ngrok  | Public tunneling             |
-| Curl   | Dependency and HTTP handler  |
+| PHP    | Phishing server and pages   |
+| Ngrok  | Public tunnel link          |
+| Curl   | HTTP requests & downloads   |
 
 ---
 
-## 🌐 Social Media
+## 🌐 Connect With Me
 
-<div align="center">
-
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/unikruzng)  
-[![GitHub](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ayomide650)
-
-</div>
+- 📬 **Telegram**: [t.me/unikruzng](https://t.me/unikruzng)  
+- 💻 **GitHub**: [Ayomide650](https://github.com/Ayomide650)
 
 ---
 
 ## 📜 License
 
+**GNU General Public License v3.0**
+
+```text
+💣 Use this tool for educational purposes only!
+❌ We are not responsible for any misuse!
 ```
-GNU General Public License v3.0
-```
-
----
-
-<div align="center">
-
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2500&pause=1000&color=00D4FF&center=true&vCenter=true&width=600&lines=💣+Use+for+educational+purposes+only!;❌+We+are+not+responsible+for+misuse!" alt="Warning" />
-
-<br>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=100&section=footer" />
-
-</div>
 
 ---
 
 ## 👤 Author
 
-<div align="center">
+<p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=2500&pause=800&color=E74C3C&center=true&vCenter=true&width=500&lines=🔥+Built+with+Dedication+by+Firekid" alt="Author Signature" />
-</div>
+</p>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=100&section=footer" />
+</p>
