@@ -1,6 +1,6 @@
 # 🔥 FireCrack - Ultimate Phishing Automation Tool
 
-> ⚠️ **Educational Purposes Only** — The creator is not responsible for misuse.
+> ⚠️ **Educational Purposes Only** . The creator is not responsible for misuse.
 
 ---
 
